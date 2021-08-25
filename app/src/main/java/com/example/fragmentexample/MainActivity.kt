@@ -2,6 +2,7 @@ package com.example.fragmentexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import com.example.fragmentexample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,25 +16,30 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.place_holder, BlankFragment.newInstance())
-            .commit()
+        openFragment(R.id.place_holder, BlankFragment.newInstance())
+        openFragment(R.id.place_holder2, BlankFragment2.newInstance())
 
-
+        /*
         binding.btnFrag1.setOnClickListener {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.place_holder, BlankFragment.newInstance())
-                .commit()
+            openFragment(R.id.place_holder, BlankFragment.newInstance())
         }
 
+         */
+
+        /*
         binding.btnFrag2.setOnClickListener {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.place_holder, BlankFragment2.newInstance())
-                .commit()
+            openFragment(R.id.place_holder, BlankFragment2.newInstance())
         }
+        */
+
 
     }
+
+    private fun openFragment(id_holder:Int, f:Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(id_holder, f)
+            .commit()
+    }
+
 }
