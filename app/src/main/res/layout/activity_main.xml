@@ -7,9 +7,8 @@
     tools:context=".MainActivity">
 
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/place_holder"
-        android:name="com.example.fragmentexample.BlankFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
@@ -27,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/place_holder2"
         android:name="com.example.fragmentexample.BlankFragment2"
         android:layout_width="0dp"
